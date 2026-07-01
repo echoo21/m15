@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Inspiration</title>
+    <!-- Menggunakan Tailwind CSS via CDN agar tampilan langsung menarik -->
+    <script src="https://jsdelivr.net"></script>
+</head>
+<body class="bg-slate-100 min-h-screen p-8 font-sans">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold text-center text-slate-800 mb-8">✨ Daily Inspiration ✨</h1>
+        
+        <!-- Grid 9 Kotak Kutipan -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <% quotes.forEach(quote => { %>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-indigo-500 flex flex-col justify-between hover:shadow-xl transition-shadow">
+                    <p class="text-lg text-slate-700 italic mb-4">"${quote.text}"</p>
+                    <p class="text-sm font-semibold text-right text-indigo-600">— ${quote.author}</p>
+                </div>
+            <% }) %>
+        </div>
+
+        <div class="text-center mt-8">
+            <button onclick="window.location.reload()" class="bg-indigo-600 text-white px-6 py-2 rounded-full font-medium shadow hover:bg-indigo-700 transition-colors">
+                Acak Kutipan Baru 🔄
+            </button>
+        </div>
+    </div>
+</body>
+</html>
